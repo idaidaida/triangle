@@ -5,9 +5,18 @@ describe "[Triangle]" do
     describe "[#triangle_type]" do
 
         context "[標準入力の数を確認]" do
-            it "入力が無い場合にエラーになること"
-            it "入力が１個の場合にエラーにならないこと"
-            specify "入力が２個以上の場合にエラーにならないこと（１つめの入力を使って処理を継続）"
+            it "入力が無い場合にエラーになること" do
+                input = []
+                expect{Triangle.triangle_type(input)}.to output("引数が入力されていません。\n").to_stdout
+            end
+            it "入力が１個の場合にエラーにならないこと" do
+                input = ["1"]
+                expect{Triangle.triangle_type(input)}.not_to output("引数が入力されていません。\n").to_stdout
+            end
+            specify "入力が２個以上の場合にエラーにならないこと" do
+                input = ["1","2"]
+                expect{Triangle.triangle_type(input)}.not_to output("引数が入力されていません。\n").to_stdout
+            end
         end
 
         context "[解析対象の辺の数を確認]" do
