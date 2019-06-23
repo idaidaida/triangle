@@ -9,8 +9,8 @@ class Triangle
    
     # 三角形の形を応答する
     def self.type(input)
-        # スペース区切りでパースされた標準入力をカンマ区切りでパースし直す
-        sides = convart_space_splited_input_into_comma_splited_input(input)
+        # 入力をカンマ区切りでパースする
+        sides = split_by_comma(input)
 
         # 入力チェック
         return puts(INVALID_INPUTS) if !(sides.length == 3)
@@ -29,7 +29,7 @@ class Triangle
 
     private
         # スペース区切りの配列をカンマ区切りに変換して、配列を取得する
-        def self.convart_space_splited_input_into_comma_splited_input(sides)
+        def self.split_by_comma(sides)
             sides = sides.join(" ")
             sides = sides.split(",")
             sides = sides.map do |side|
