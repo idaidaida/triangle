@@ -9,7 +9,7 @@ class Triangle
    
     # 三角形の性質を応答する
     def self.type(input)
-        # スペース区切りの標準入力をカンマ区切りでパースし直す
+        # スペース区切りでパースされた標準入力をカンマ区切りでパースし直す
         sides = convart_space_splited_input_into_comma_splited_input(input)
 
         # 入力チェック
